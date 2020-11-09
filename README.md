@@ -1,45 +1,101 @@
 # MechaCar_Statistical_Analysis
 
+## Project Overview
+This project involves the use of statistics and hypothesis testing to analyze a series of datasets from the automotive industry.\
+All of the statistical analysis and visualizations is written in the R programming language.
+
+## Resources
+- Data Source: [MechaCar_mpg.csv](https://github.com/cedoula/MechaCar_Statistical_Analysis/blob/main/Resources/MechaCar_mpg.csv), [Suspension_Coil.csv](https://github.com/cedoula/MechaCar_Statistical_Analysis/blob/main/Resources/Suspension_Coil.csv)
+- Software: RStudio 1.3.1093
+
+<br>
+
 ## Linear Regression to Predict MPG
 
-Screenshots
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/68669675/98474372-f439e280-21ba-11eb-8f80-d707ca8003d5.png"> 
+</p>
 
-- Which variables/coefficients provided a non-random amount of variance to the mpg values in the dataset?
-    In the summary output, each Pr(>|t|) value represents the probability that each coefficient contributes a random amount of variance to the linear model. According to our results vehicle length and ground clearance (and Intercept) provide a non-random amount of variance to the linear model of mpg.
-- Is the slope of the linear model considered to be zero? Why or why not?
-    According to the results, the multi linear model is:
-    mpg = 6.27*vehicle_length + 1.25e-3*vehicle_weigth + 6.88e-2*spoiler_angle -3.41*AWD +3.55*ground_clearance
-    So the slope of the linear model is not considered to be zero.
-- Does this linear model predict mpg of MechaCar prototypes effectively? Why or why not?
-    R-square is 0.71 so 71% of the variations in mpg can be explained by changes in the vehicle length, the vehicle weight, the spoiler angle, the drivetrain and the ground clearance. We can consider this linear model as fairly efficient to predict mpg of MechaCar prototypes.
+- In the summary output, each Pr(>|t|) value represents the probability that each coefficient contributes a random amount of variance to the linear model. According to our results vehicle length and ground clearance (and Intercept) provide a non-random amount of variance to the linear model of mpg.
+
+- According to the results, the multi linear model is:
+```
+mpg = 6.27 * vehicle_length + 1.25e-3 * vehicle_weigth + 6.88e-2 * spoiler_angle -3.41 * AWD + 3.55 * ground_clearance - 1.04e+2
+```
+Approximated to:
+
+```
+mpg = 6.27 * vehicle_length - 3.41 * AWD + 3.55 * ground_clearance - 104
+```
+So the slope of the linear model is not considered to be zero.
+
+- R-square is 0.71 so 71% of the variations in mpg can be explained by changes in the vehicle length, the vehicle weight, the spoiler angle, the drivetrain and the ground clearance. We can consider this linear model as fairly efficient to predict mpg of MechaCar prototypes.
+
+<br>
 
 ## Summary Statistics on Suspension Coils
 
-Screenshots
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/68669675/98474385-f4d27900-21ba-11eb-82da-90ebd98192ec.png"> 
+</p>
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/68669675/98474391-f56b0f80-21ba-11eb-9393-63bf7f9dba87.png"> 
+</p>
 
-- The design specifications for the MechaCar suspension coils dictate that the variance of the suspension coils must not exceed 100 pounds per square inch. Does the current manufacturing data meet this design specification for all manufacturing lots in total and each lot individually? Why or why not?
-    The design specs are respected for all manufact lots in total with a global variance of 62.3 psi.
-    On the lot level, Lot 1 and Lot 2 are into specs with respectively variances of 0.98 and 7.5 psi. Lot 3 is out of specs with a variance of 170.3 psi.
+The design specifications for the MechaCar suspension coils dictate that the variance of the suspension coils must not exceed 100 pounds per square inch.\
+The design specs are respected for all manufacturing lots in total with a global variance of 62.3 psi.\
+On the lot level, Lot 1 and Lot 2 are into specs with respectively variances of 0.98 and 7.5 psi. The Lot 3 is out of specs with a variance of 170.3 psi.
+
+<br>
 
 ## T-Tests on Suspension Coils
 
 ### T-Test all manufacturing lots against the population mean
 
-Screenshot
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/68669675/98474356-f308b580-21ba-11eb-955b-bf4211a38d92.png"> 
+</p>
 
-Assuming our significance level is the common 0.05 percent, our p-value of xxx is above our significance level. Therefore, we do not have sufficient evidence to reject the null hypothesis, and we can state that the PSI across all manufacturing lots is statiscally similar to the population mean.
+Assuming our significance level is the common 0.05 percent, our p-value of 0.069 is above the significance level. Therefore, we do not have sufficient evidence to reject the null hypothesis, and we can state that the PSI across all manufacturing lots is statiscally similar to the population mean of 1498.78 psi.
 
 ### T-Tests each manufacturing lot against the population mean
 
 #### Lot1
 
-Sreenshot
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/68669675/98474375-f439e280-21ba-11eb-9332-a14124bed49c.png"> 
+</p>
 
 Here the p-value is below the significance level of 0.05 percent, so we can reject the null hypothesis and conclude that the PSI across the Lot 1 is statistically different from the population mean.
 
+<br>
+
 #### Lot2 and Lot3
 
-Screenshot
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/68669675/98474378-f439e280-21ba-11eb-90ea-2349f3081f2e.png"><br>Lot 2  
+</p>
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/68669675/98474380-f4d27900-21ba-11eb-812a-1c24e7fe25b1.png"><br>Lot3
+</p>
 
 Here both p-values are above the significance level, so we can conclude that the PSI for Lot2 and Lot3 are statistically similar to the population mean.
 
+<br>
+
+## Study Design: MechaCar vs Competition
+- What metrics ?:
+    - 0 to 60 mph
+    - braking distance
+    - fuel economy
+    - Power
+    - Safety rating
+
+- Null hypothesis: The means of all groups are equal, or mu1=mu2=...=mun
+Is there any statistical difference between the metrics based on the manufacturer
+
+- What statistical test would you use to test the hypothesis? And why?
+I would use a one-way ANOVA test. This test is used to compare the means of a continuous numerical variable across a number of groups.
+
+- What data is needed to run the statistical test?
+we would need data of MechaCar vehicles and the competition also gathered in a single dataframe where each metric is a column.
