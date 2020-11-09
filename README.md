@@ -84,18 +84,17 @@ Here both p-values are above the significance level, so we can conclude that the
 <br>
 
 ## Study Design: MechaCar vs Competition
-- What metrics ?:
-    - 0 to 60 mph
-    - braking distance
-    - fuel economy
-    - Power
-    - Safety rating
+To compare the performance of the MechaCar prototype against the vehicles from the competition, we will perform a statistical analysis based on the following metrics: 
+- the "0 to 60 mph" time,
+- the braking distance,
+- the fuel economy (mpg),
+- the Power,
+- the safety rating.
 
-- Null hypothesis: The means of all groups are equal, or mu1=mu2=...=mun
-Is there any statistical difference between the metrics based on the manufacturer
+In our case the null hypothesis would be: each performance metrics is statistically similar between the MechaCar prototype and all vehicle from the other manufacturers.
 
-- What statistical test would you use to test the hypothesis? And why?
-I would use a one-way ANOVA test. This test is used to compare the means of a continuous numerical variable across a number of groups.
+We would use a one-way ANOVA test. This test is used to compare the means of a continuous numerical variable across a number of groups.\
+So in this analysis we would compare the means for each metric across the different manufacturers.
 
-- What data is needed to run the statistical test?
-we would need data of MechaCar vehicles and the competition also gathered in a single dataframe where each metric is a column.
+To perform the test, we would need data of MechaCar vehicles and its competition, all gathered in a single dataframe where each metric is a column.\
+The data could be scraped from vehicle data APIs such as [scrapinghub.com/data-api-vehicle](https://www.scrapinghub.com/data-api-vehicle/) or [carqueryapi.com](https://www.carqueryapi.com/).
