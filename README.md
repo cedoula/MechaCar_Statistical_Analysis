@@ -36,10 +36,10 @@ So the slope of the linear model is not considered to be zero.
 ## Summary Statistics on Suspension Coils
 
 <p align="center">
-    <img src="https://user-images.githubusercontent.com/68669675/98474385-f4d27900-21ba-11eb-82da-90ebd98192ec.png"> 
+    <img src="https://user-images.githubusercontent.com/68669675/98474385-f4d27900-21ba-11eb-82da-90ebd98192ec.png"><br>All manufacturing lots 
 </p>
 <p align="center">
-    <img src="https://user-images.githubusercontent.com/68669675/98474391-f56b0f80-21ba-11eb-9393-63bf7f9dba87.png"> 
+    <img src="https://user-images.githubusercontent.com/68669675/98474391-f56b0f80-21ba-11eb-9393-63bf7f9dba87.png"><br>By each manufacturing lot
 </p>
 
 The design specifications for the MechaCar suspension coils dictate that the variance of the suspension coils must not exceed 100 pounds per square inch.\
